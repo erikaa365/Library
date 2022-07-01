@@ -5,45 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');    </style>
     <title>Library</title>
 </head>
 <body>
     <div class="header">
-        <h1>MY LIBRARY</h1>
+        <p>MY LIBRARY</p>
         <button id="addBook">Add new book</button>
     </div>
     
-    <h2>BOOKS TO READ</h2>`
-    <table id="booksToRead" class="books">
-        <tr>
-            <th class="title">Title</th>
-            <th class="author">Author</th>
-            <th class="pages">Pages</th>
-            <th class="markRead">Mark read</th>
-            <th class="delete">Delete</th>
-        </tr>
-    </table>
+    <div class="shelf"><p>BOOKS TO READ</p></div>
+    <div class="bookOnShelf">
+        <table id="booksToRead" class="books">
+            <tr id="tableHeader1">
+                <th class="title">Title</th>
+                <th class="author">Author</th>
+                <th class="pages">Pages</th>
+                <th class="markRead">Read?</th>
+                <th class="delete">Delete</th>
+            </tr>
+        </table>
+    </div>
 
-    <h2>READ BOOKS</h2>
-    <table id="readBooks" class="books">
-        <tr>
-            <th class="title">Title</th>
-            <th class="author">Author</th>
-            <th class="pages">Pages</th>
-            <th class="rating">Rating</th>
-            <th class="delete">Delete</th>
-        </tr>
-    </table>
+    <div class="shelf"><p>READ BOOKS</p></div>
+    <div class="bookOnShelf">
+        <table id="readBooks" class="books">
+            <tr id="tableHeader2">
+                <th class="title">Title</th>
+                <th class="author">Author</th>
+                <th class="pages">Pages</th>
+                <th class="rating">Rating</th>
+                <th class="delete">Delete</th>
+            </tr>
+        </table>
+    </div>
     
 
 
     <div class="wrapper">
         <form id="addBookForm" class="form" style="display: none;">
-                <input type="text" id="title" name="title" placeholder="Title" required>
-                <input type="text" id="author" name="author" placeholder="Author" required>
-                <input type="number" id="pages" name="pages" placeholder="Pages" required>
+            <input type="text" id="title" name="title" placeholder="Title" required>
+            <input type="text" id="author" name="author" placeholder="Author" required>
+            <input type="number" id="pages" name="pages" placeholder="Pages" required>
 
-            <div>
+            <div id="didRead">
                 <label for="didYouRead">Did you read this book?</label>      
                 <div id="didYouRead">
                     <input type="radio" name="read" id="yes" value="yes">
@@ -55,9 +61,15 @@
             </div>
 
             <div id="expandable">
-                <label for="rating">Rate the book from 1 to 10</label>
-                <input type="range" id="rating" min="1" max="10" value="0">
-                <p id="current_rating"></p>
+                <div>
+                    <label for="rating">Rate the book from 1 to 10</label>
+                </div>
+
+                <div id="expandable_rating">
+                    <input type="range" id="rating" min="1" max="10" value="0">
+                    <p id="current_rating"></p>
+                </div>
+
             </div>
 
             <div>
@@ -67,11 +79,25 @@
     </div>
 
     <div id="markRead_askForRating">
-        <label for="askRating">Rate the book from 1 to 10</label>
-        <input type="range" id="askRating" min="1" max="10" value="0">
-        <p id="current_askRating"></p>
-        <button id="submit_askRating">Submit</button>
+        <div id="markReadForm">
+            <label for="askRating">Rate the book from 1 to 10</label>
+
+            <div id="markRead_ratingDisplay">
+                <input type="range" id="askRating" min="1" max="10" value="0">
+                <p id="current_askRating"></p>
+            </div>
+
+            <button id="submit_askRating">Submit</button>
+        </div>
     </div>
+
+    <div class="shelf"></div>
+
+    <div class="shelf" id="footer">
+        <p>Photo by Pixabay: https://www.pexels.com/photo/brown-wooden-board-301378/</p>
+        <p>Photo by Pixabay: https://www.pexels.com/photo/macro-shot-of-wooden-planks-326333/</p>
+    </div>
+
 
     <script src="./script.js"></script>
 </body>

@@ -82,8 +82,8 @@ function updateRatingValue(newRating){
 //-----------Make tables-----------//
 let booksToReadTable = document.getElementById('booksToRead');
 let readBooksTable = document.getElementById('readBooks');
-const markReadButton = '<input type="button" value="Mark as read" onclick="markAsRead(this)">';
-const deleteButton = '<input type="button" value="Delete" onclick="deleteRow(this)">';
+const markReadButton = '<input type="button" value="Mark as read" id="markAsReadBtn" onclick="markAsRead(this)">';
+const deleteButton = '<input type="button" value="Delete" id="deleteBtn" onclick="deleteRow(this)">';
 
 function makeBooksToReadTable(){
         let currentBooksToRead = booksToRead;
@@ -162,10 +162,6 @@ function markAsRead(o){
    // askRating.onchange = (e) => changeAskRating(e.target.value);
     askRating.onmousemove = (e) => updateAskRatingValue(e.target.value);
 
-                                    // function changeAskRating(newRating){
-                                    //     currentRating = newRating;    
-                                    //     updateAskRatingValue(newRating);               
-                                    //     };
 
     //-----Change rating display
     function updateAskRatingValue(newRating){
@@ -191,7 +187,6 @@ function markAsRead(o){
         
     }
 }
-
 
 
 //--------MAIN BUTTON FUNCTIONS  ('Add book',  'ESC',  'Form')--------//
