@@ -1,36 +1,55 @@
-div{
-    border: 3px solid black;
-    margin: 3px;
-    padding: 5px;
-}
-
 .header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+
+
+/* Style table with books */
 .books{
-    display: flex;
-    justify-content: space-between; 
+    width: 90vw;
+    margin-left: 5vw;
+    border-collapse: collapse;
 }
 
-.books > div{
-    display: flex;
+.title, .author{
+    min-width: 150px;
+}
+
+.markRead, .delete, .rating, .pages{
+    width: 50px;
+} 
+tr{
+    height: 50px;
 }
 
 
+
+/* Style 'Add book form' */
 #addBookForm{
     width: 400px;
-    border: 2px solid salmon;
+    background-color: aquamarine;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -300px 0 0 -200px;
 }
 
-label{
-    border: 2px solid pink;
-}
 
+
+
+
+
+
+
+#addBookForm{border: 2px solid salmon;}
+label{border: 2px solid pink;}
+th, td{border: 3px solid black;
+    margin: 3px;
+    padding: 5px;}

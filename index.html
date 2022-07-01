@@ -13,66 +13,65 @@
         <button id="addBook">Add new book</button>
     </div>
     
-    <h2>BOOKS TO READ</h2>
-    <div class="booksToRead books">
-        <div>
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-        </div>
-        <div>
-            <div><button class="markRead">Mark read</button></div>
-            <div><button class="delete">Delete</button></div>
-        </div>
-    </div>
+    <h2>BOOKS TO READ</h2>`
+    <table id="booksToRead" class="books">
+        <tr>
+            <th class="title">Title</th>
+            <th class="author">Author</th>
+            <th class="pages">Pages</th>
+            <th class="markRead">Mark read</th>
+            <th class="delete">Delete</th>
+        </tr>
+    </table>
 
     <h2>READ BOOKS</h2>
-    <div class="readBooks books">
-        <div>
-            <div class="title"></div>
-            <div class="author"></div>
-            <div class="pages"></div>
-        </div>
-        <div>
-            <div class="rating"></div>
-            <div><button class="delete">Delete</button></div>
-        </div>
-    </div>
+    <table id="readBooks" class="books">
+        <tr>
+            <th class="title">Title</th>
+            <th class="author">Author</th>
+            <th class="pages">Pages</th>
+            <th class="rating">Rating</th>
+            <th class="delete">Delete</th>
+        </tr>
+    </table>
     
 
 
+    <div class="wrapper">
+        <form id="addBookForm" class="form" style="display: none;">
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <input type="text" id="author" name="author" placeholder="Author" required>
+                <input type="number" id="pages" name="pages" placeholder="Pages" required>
 
-    <form id="addBookForm" style="display: none;">
-            <input type="text" id="title" name="title" placeholder="Title">
-            <input type="text" id="author" name="author" placeholder="Author">
-            <input type="number" id="pages" name="pages" placeholder="Pages">
-    
-        <div>
-            <label for="didYouRead">Did you read this book?</label>      
-            <div id="didYouRead">
-                <input type="radio" name="read" id="yes" value="no">
-                <label for="yes">Yes</label>
-            
-                <input type="radio" name="read" id="no" value="no" checked>
-                <label for="no">No</label>
+            <div>
+                <label for="didYouRead">Did you read this book?</label>      
+                <div id="didYouRead">
+                    <input type="radio" name="read" id="yes" value="yes">
+                    <label for="yes">Yes</label>
+                
+                    <input type="radio" name="read" id="no" value="no" checked>
+                    <label for="no">No</label>
+                </div>
             </div>
-        </div>
 
-        <div id="expandable">
-            <div>
-                <label for="about">Write a little something about the book if you want:</label>
-                <br><textarea name="about" id="about" cols="39" rows="10"></textarea>
-            </div>
-            <div>
+            <div id="expandable">
                 <label for="rating">Rate the book from 1 to 10</label>
-                <input type="range" id="rating" min="1" max="10">
+                <input type="range" id="rating" min="1" max="10" value="0">
+                <p id="current_rating"></p>
             </div>
-        </div>
 
-        <div>
-            <button type="submit" id="submitBookButton">Add book</button>
-        </div>
-    </form>
+            <div>
+                <button type="submit" id="submitBook" name="submitBook">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="markRead_askForRating">
+        <label for="askRating">Rate the book from 1 to 10</label>
+        <input type="range" id="askRating" min="1" max="10" value="0">
+        <p id="current_askRating"></p>
+        <button id="submit_askRating">Submit</button>
+    </div>
 
     <script src="./script.js"></script>
 </body>
