@@ -3,6 +3,26 @@
     src: url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&display=swap');
 }
 
+@keyframes fadeIn {
+    from{opacity: 0;}
+    to{opacity: 1;} 
+}
+
+@keyframes slideIn {
+    from{transform: translateX(-100%);}
+    to{transform: translateX(0%);}
+}
+
+@keyframes slideDownFade {
+    from{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0%);
+        opacity: 1;
+    }
+}
 
 :root{
     --background-color: #385622;
@@ -71,7 +91,11 @@ body::after {
     text-align: center;
     font-weight: bold;
     line-height: 53px;
+
+    animation: fadeIn 3s;
 }
+
+
 
 #addBook{
     border-radius: 15% 50%;   
@@ -129,18 +153,22 @@ body::after {
     width: 80px;
 }
 
-#booksToRead tr{
+#booksToRead tr, #readBooks tr{
     height: 50px;
+    animation: slideIn 2s;
+}
+
+#booksToRead tr{
     background-color: var(--unreadBooks);
 }
 
 #readBooks tr{
-    height: 50px;
     background-color: var(--readBooks);
 }
 
 #booksToRead tr:first-of-type, #readBooks tr:first-of-type{
     background-color: var(--background-color);
+    animation: none;
 }
 
 th, td {
@@ -177,7 +205,10 @@ tr{
     top: 60%;
     left: 50%;
     margin: -300px 0 0 -200px;
+
+    animation: slideDownFade 2s;
 }
+
 
 #addBookForm > input{
     height: 40px;
@@ -253,6 +284,8 @@ tr{
     margin: -300px 0 0 -200px;
 
     font-size: 20px;
+
+    animation: slideDownFade 2s;
 }
 
 #markRead_ratingDisplay{
