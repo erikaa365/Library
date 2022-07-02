@@ -3,10 +3,6 @@
     src: url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:wght@700&display=swap');
 }
 
-@keyframes fadeIn {
-    from{opacity: 0;}
-    to{opacity: 1;} 
-}
 
 @keyframes slideIn {
     from{transform: translateX(-100%);}
@@ -92,7 +88,7 @@ body::after {
     font-weight: bold;
     line-height: 53px;
 
-    animation: fadeIn 3s;
+    animation: slideDownFade 2s ease;
 }
 
 
