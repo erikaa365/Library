@@ -170,7 +170,7 @@ body::after {
 }
 
 #booksToRead tr:first-of-type, #readBooks tr:first-of-type{
-    background-color: var(--background-color);
+    background-color: #09813bd0;
     animation: none;
 }
 
@@ -180,7 +180,7 @@ th, td {
     border-top: 3px solid black;
   }
   
-tr{
+  tr{
     -webkit-box-shadow: inset 0px 0px 22px 18px rgba(0,0,0,0.66); 
     box-shadow: inset 0px 0px 22px 18px rgba(0,0,0,0.66);
 
